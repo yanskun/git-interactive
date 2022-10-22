@@ -6,6 +6,7 @@ files=(`echo $status`)
 CurrentChoice=0
 
 TextUnderLine(){ printf "\033[4m" ; }
+TextCyan(){ printf "\033[36m" ; }
 TextBold(){ printf "\033[1m" ; }
 ResetStyle(){ printf "\033[0m"; }
 
@@ -13,6 +14,7 @@ function print_menu() {
   for i in "${!files[@]}"; do
     if [[ "$i" = "$CurrentChoice" ]]; then
       TextBold
+      TextCyan
       printf " > "
       TextUnderLine
       echo "${files[$i]}"
